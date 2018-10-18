@@ -1,0 +1,27 @@
+{
+  "name": "vagrant",
+  "version": "0.0.0",
+  "description": "Architecture of baz",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/breising/bazo.git"
+  },
+  "author": "",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/breising/bazo/issues"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "~4.16.4",
+    "express-session": "^1.15.6",
+    "pg": "^7.5.0",
+    "pg-format": "^1.0.4",
+    "pug": "^2.0.3",
+    "socket.io": "~2.1.1"
+  }
+}
