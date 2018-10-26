@@ -98,7 +98,7 @@ var age = 732
 // require('./routes/buyNow')(app);
 // require('./routes/youserDash')(app);
 // require('./routes/patientDash')(app);
-require('./routes/template-build')(app);
+require('./dist/routes/template-build')(app);
 // require('./routes/template-build-delete-block')(app);
 // require('./routes/template-build-repaint-blocks')(app);
 // require('./routes/template-edit')(app);
@@ -129,9 +129,9 @@ var config = {
 //below is required to serve static files from public
 app.use('/public/', express.static(__dirname + '/public/'));
 //below sets up the html templating
-app.set('views','./views')
+app.set('views','./dist/views')
 app.set('view engine', 'pug')
-
+//hkjkjhkj
 //below sets up sessions
 // NOTE: secret must be save in environment variable prior to production!!!!
 // NOTE: secret must be save in environment variable prior to production!!!!

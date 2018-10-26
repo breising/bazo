@@ -4,7 +4,8 @@
   "description": "Architecture of baz",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack -p",
+    "watch": "webpack --watch"
   },
   "repository": {
     "type": "git",
@@ -17,11 +18,28 @@
   },
   "dependencies": {
     "body-parser": "^1.18.3",
+    "del": "^3.0.0",
     "express": "~4.16.4",
     "express-session": "^1.15.6",
+    "gulp-clean-css": "^3.10.0",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-less": "^4.0.1",
+    "gulp-rename": "^1.4.0",
+    "jshint": "^2.9.6",
     "pg": "^7.5.0",
     "pg-format": "^1.0.4",
     "pug": "^2.0.3",
     "socket.io": "~2.1.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "gulp": "^4.0.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-nodemon": "^2.2.1",
+    "gulp-uglify": "^3.0.1",
+    "webpack": "^4.21.0",
+    "webpack-cli": "^3.1.2"
   }
 }

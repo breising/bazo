@@ -1,5 +1,6 @@
-const express = require('express')
-const app = express()
+var jkdlkf = "jklkj";
+var express = require('express')
+var app = express()
 var session = require('express-session')
 var pg = require('pg')
 
@@ -11,6 +12,7 @@ Store each event in an object protoype ScheduleEvent
   - has doctor time: 'start' and 'end'
 
 */
+// this is a commentjklkjk
 
 module.exports = function(app) {
 
@@ -77,7 +79,7 @@ module.exports = function(app) {
 
                   //return res.sendStatus(200);
 
-
+                  console.log("HEY MON!! ttttttt");
                   return res.render('template-build.pug', {chairs: chairs, message: message, login: "Logout", blocks:blocks, templates:templates})
                 } // if result
               }) //dbClient
