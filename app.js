@@ -127,23 +127,19 @@ var config = {
   password: 'bcr0072'
 }
 //below is required to serve static files from public
-app.use('/public/', express.static(__dirname + '/public/'));
+app.use('/public/', express.static(__dirname + '/dist/public/'));
 //below sets up the html templating
-app.set('views','./dist/views')
+app.set('views','./dist/views/')
 app.set('view engine', 'pug')
-//hkjkjhkj
+
 //below sets up sessions
-// NOTE: secret must be save in environment variable prior to production!!!!
-// NOTE: secret must be save in environment variable prior to production!!!!
-// NOTE: secret must be save in environment variable prior to production!!!!
-// NOTE: secret must be save in environment variable prior to production!!!!
 // NOTE: secret must be save in environment variable prior to production!!!!
 app.use(session({
     secret: '123',
     resave: true,
     saveUninitialized: true
 }));
-
+//sadf
 //auth tests whether a user cookie is found
 var auth = function(req, res, next) {
   if (req.session && req.session.user === "n" && req.session.admin)

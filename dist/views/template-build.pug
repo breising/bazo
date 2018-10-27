@@ -1,10 +1,9 @@
 include base3.html
 head
   include base4.html
-  link(rel=stylesheet type=text/css href="public/stylesheets/template-build.css")
-  script(src="/dist/public/javascripts/main.min.js" type='text')
-  //- script(src="/dist/template-build2.bundle.js")
-body "Cg"
+  link(rel='stylesheet' type='text/css' href="public/stylesheets/template-build.css")
+  script(type='text' src="/public/javascripts/jquery-3.3.1.min.js")
+body
   include header.pug
   div(class="message2")= message
   div(class="row noselect" style="margin-left: 0px")
@@ -20,7 +19,7 @@ body "Cg"
               div(class="block-item block-item-duration")= x.duration
               div(class="block-item block-item-name")= x.name
               div(class="block-item block-item-color")= x.color
-
+       
     div(class="col-xs-6")
       div(class="sequence-contain")
         h5= "Templates"
@@ -35,18 +34,18 @@ body "Cg"
         button(class="btn" class="back_template")= "< Back"
 
         button(style="margin-left: 5px" class="btn" class="next_template")= "Next >"
-
+        
         button(style="margin-top: 5px" class="btn" class="new_template")= "New"
 
         button(style="margin-left: 5px; margin-top: 5px" class="btn" class="edit_template")= "Edit Blocks"
 
-
+        
         div(class="color")="Select color:"
           input(class="jscolor" value="")
-
+        
         input(style="margin-top: 5px" readonly type="text" class="id_template form-control" value=templateObject.templates[0].id)
         input(type="text" placeholder="Name" readonly class="name_template form-control" value=templateObject.templates[0].name)
-
+        
         input(type="text" readonly placeholder="Description" class="description_template form-control" value=templateObject.templates[0].description)
         button(class="btn-primary save_template" style="display:none")= "Save Template"
         button(class="btn-primary save_edits" style="display:none")= "Save Edits"
@@ -112,7 +111,7 @@ div(class="chair-time-contain noselect")
 script.
   var templateObject = !{JSON.stringify(templateObject)};
 
-script(src="/public/javascripts/template-build.js")
+script(type='text/javascript' src="public/javascripts/template-build.js")
 //- script.
 //-   // Get the value of templateObject from the PUG
 //-   var templateObject = !{JSON.stringify(templateObject)};
@@ -314,7 +313,7 @@ script(src="/public/javascripts/template-build.js")
 //-     $(".noselect").css("background-color", templateObject.templates[counter].color);
 
 //-   };
-
+  
 //-   var getTBlocks = function(templateList){
 //-     //templateList should = templateObject
 
@@ -353,7 +352,7 @@ script(src="/public/javascripts/template-build.js")
 
 
 
-
+    
 //-     // updates the list of templates using the JSON callback from the "save template new" ajax post.
 //-     var refreshTemplates = function(newTemplates) {
 //-       // delete the old list first...templateObject is an object containing an array of objects called templates.
@@ -385,7 +384,7 @@ script(src="/public/javascripts/template-build.js")
 //-       repaintTemplateBlocks();
 //-     }) //...next_template
 
-
+   
 //-     var tempBlocks = {};
 //-     tempBlocks.array = [];
 
@@ -414,7 +413,7 @@ script(src="/public/javascripts/template-build.js")
 //-     //- $(document).ready(function() {
 //-     // ON CLICKING the NEW template button (NOT SAVE)
 //-     $(".new_template").click(function(){
-
+      
 //-       // go into new-template MODE
 
 //-       // turn off edit mode
@@ -437,14 +436,14 @@ script(src="/public/javascripts/template-build.js")
 
 //-       disableDragDrop();
 
-
+    
 //-     })//... click.new_template
 
 
 //-     $(".edit_template").click(function(){
 //-       // set the edit mode flag. This enables deleting a block from a template.
 //-       delete_block_flag = "edit_mode"
-
+      
 //-       inputs_on();
 
 //-       activateDragDrop();
@@ -519,7 +518,7 @@ script(src="/public/javascripts/template-build.js")
 //-       $(".name_template").css('background-color','#c6ecc6');
 //-       $(".description_template").css('background-color','#c6ecc6');
 //-       //show save button and activate listener
-
+      
 //-     } //... inputs_on
 
 //-     var clear_inputs = function(){
@@ -570,7 +569,7 @@ script(src="/public/javascripts/template-build.js")
 //-       //$(".color").hide();
 //-       $(".save_template").hide();
 //-       $(".save_edits").hide();
-
+      
 
 //-       $.ajax({
 //-           type:"POST",
@@ -583,7 +582,7 @@ script(src="/public/javascripts/template-build.js")
 //-             repaintTemplateBlocks();
 //-             console.log("From Ajax success");
 //-             // exit the save_template_new MODE
-
+            
 //-           } //...success
 //-       }) // ... ajax
 //-     } //...save_template_new
@@ -600,7 +599,7 @@ script(src="/public/javascripts/template-build.js")
 
 //-             hour = hour.split(":")[0].split(".")[1];
 //-             hour = Number(hour) * 60;
-
+            
 //-             min = min.split(":")[1];// = 00PM
 //-             min = Number(min[0] + min[1]);// final
 
@@ -703,7 +702,7 @@ script(src="/public/javascripts/template-build.js")
 
 
 
-
+  
 
 
 

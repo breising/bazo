@@ -11,8 +11,8 @@ var del = require('del');
 
 var paths = {
   styles: {
-    src: '/public/stylesheets/**/*.css',
-    dest: 'dist/public/stylesheets'
+    src: 'public/stylesheets/**/*.css',
+    dest: 'dist/public/stylesheets/'
   },
   scripts: {
     src: 'routes/**/*.js',
@@ -39,13 +39,12 @@ function clean() {
  */
 function styles() {
   return gulp.src(paths.styles.src)
-    .pipe(less())
-    .pipe(cleanCSS())
+    .pipe(cleanCSS({compatibility: 'ie8'}))
     // pass in options to the stream
-    .pipe(rename({
-      basename: 'main',
-      suffix: '.min'
-    }))
+    // .pipe(rename({
+    //   basename: 'main',
+    //   suffix: '.min'
+    // }))
     .pipe(gulp.dest(paths.styles.dest));
 }
 
@@ -66,21 +65,23 @@ function scripts2() {
 }
 
 function html() {
-  return gulp.src(['views/**/*.html', '!views/**/ignore.pug'])
+  return gulp.src('views/**/*.html')
     .pipe(htmlmin({ collapseWhitespace: true }))
     .pipe(gulp.dest('dist/views/'));
 }
 
 function pug() {
-  return gulp.src('views/*.pug')
-    .pipe(gulpPugBeautify({ omit_empty: true }))
+  return gulp.src('views/**/*.pug')
+    //.pipe(gulpPugBeautify({ omit_empty: true }))
     .pipe(gulp.dest('dist/views/'));
 }
 
 function watch() {
   gulp.watch(paths.scripts.src, scripts);
+  gulp.watch(paths.scripts2.src, scripts2);
   gulp.watch(paths.styles.src, styles);
   gulp.watch('views/**/*.html', html);
+  gulp.watch('views/**/*.pug', pug);
 }
 
 /*

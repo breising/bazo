@@ -1,10 +1,9 @@
 include base3.html
 head
   include base4.html
-  link(rel=stylesheet type=text/css href="public/stylesheets/template-build.css")
-  script(src="/dist/public/javascripts/main.min.js" type='text')
-  //- script(src="/dist/template-build2.bundle.js")
-body "Cg"
+  link(rel='stylesheet' type='text/css' href="public/stylesheets/template-build.css")
+  script(type='text' src="/public/javascripts/jquery-3.3.1.min.js")
+body
   include header.pug
   div(class="message2")= message
   div(class="row noselect" style="margin-left: 0px")
@@ -112,7 +111,7 @@ div(class="chair-time-contain noselect")
 script.
   var templateObject = !{JSON.stringify(templateObject)};
 
-script(src="/public/javascripts/template-build.js")
+script(type='text/javascript' src="public/javascripts/template-build.js")
 //- script.
 //-   // Get the value of templateObject from the PUG
 //-   var templateObject = !{JSON.stringify(templateObject)};
